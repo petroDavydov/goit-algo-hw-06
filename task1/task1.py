@@ -88,7 +88,7 @@ plt.figure(figsize=(10, 8))
 pos = nx.spring_layout(G)
 nx.draw(G, with_labels=True, node_size=1000, node_color="lightblue",
         edge_color="gray", font_size=15, font_color="black", pos=pos)
-plt.title("Network Access Graph with Firewall and Restricted Access")
+plt.title("Servers and Connections Graph")
 plt.show()
 
 
