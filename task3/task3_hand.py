@@ -1,6 +1,8 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import heapq as hq
+from colorama import Fore, Style, init
+init(autoreset=True)
 
 
 # Список серверів
@@ -124,6 +126,13 @@ start_server = "Server11_backup"
 shortest_path = dijkstra_path_hand(G, start_server)
 
 # Виводимо найкоротші шляхи
-print(f"Shortest path to  {start_server}:")
+# print(f"Shortest path to  {start_server}:")
+# for server, distance in shortest_path.items():
+#     print(f"From {start_server} -to-> {server}: {distance} node(s)")
+
+# Виводимо найкоротші шляхи
+print(f"\033[1m{Fore.LIGHTGREEN_EX}Shortest path to {start_server}:{Fore.RESET}\033[0m")
 for server, distance in shortest_path.items():
-    print(f"From {start_server} -to-> {server}: {distance} node(s)")
+    print(f"{Fore.MAGENTA}From {start_server} {Fore.LIGHTRED_EX}-to-> {Fore.BLUE}{server}: {Fore.RED}{distance}{Fore.RESET} node(s)")
+
+print()
